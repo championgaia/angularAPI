@@ -1,0 +1,37 @@
+
+<select id="cbIdClient" (change)="onChange($event)">
+  <option id="option1">1</option>
+  <option id="option2">2</option>
+  <option id="option3">3</option>
+  <option id="option4">4</option>
+  <option id="option5">5</option>
+</select>
+<select id="cbNumeroClient">
+  
+</select>
+<select id="mixClient"></select>
+<div id="divContinent">
+  <select (change)="onChangeContinentDdl($event)" id="ddlContinent">
+    <!-- <option [value]="0">...</option> -->
+    <option *ngFor="let continentDdl of _monCatalogue.ListeContinent" [value]="continentDdl.Id" [id]="'continent'+continentDdl.Id">{{continentDdl.Nom}}</option>
+  </select>
+</div>
+<div id="divPays">
+  <select (change)="onChangePaysDdl($event)" id="ddlPays">
+      <!-- <option [value]="0">...</option> -->
+    <option *ngFor="let paysDdl of _monCatalogue.ListePays" [value]="paysDdl.Id">{{paysDdl.Nom}}</option>
+  </select>
+</div>
+<div id="divRegion">
+  <select (change)="onChangeRegionDdl($event)" id="ddlRegion">
+      <!-- <option [value]="0">...</option> -->
+    <option *ngFor="let regionDdl of _monCatalogue.ListeRegion" [value]="regionDdl.Id">{{regionDdl.Nom}}</option>
+  </select>
+</div>
+<div>
+  <select (change)="onChangeOffreDdl($event)" id="ddlOffre">
+      <!-- <option [value]="0">...</option> -->
+    <option *ngFor="let offreDdl of _monCatalogue.ListeOffre" [value]="offreDdl.Id">{{offreDdl.Id}}</option>
+  </select>
+</div>
+
